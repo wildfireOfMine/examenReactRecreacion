@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { futbol } from '../json/Futbol';
 import { UserContext } from '../context/UserContext';
@@ -9,16 +9,12 @@ const ListarEquipos = () => {
   const equipos = futbol;
   const data=useLocation();
 
-  
-  for (let i=0; i<equipos.length; i++) {
-    localStorage.key(i);
-    localStorage.setItem(`Equipo ${i}`, JSON.stringify(equipos[i]));
-  }
-
-  const handleButtonClick = (e) => {
-    e.preventDefault();
-    navigate(-1);
-  }
+  useEffect(() => {
+    for (let i=0; i<equipos.length; i++) {
+      localStorage.key(i);
+      localStorage.setItem(`Equipo ${i}`, JSON.stringify(equipos[i]));
+    }
+  }, [])
 
   const equiposLocales = []
   for (let j=0; j<localStorage.length; j++) {
@@ -26,6 +22,11 @@ const ListarEquipos = () => {
     if (clave.includes("Equipo")) {
       equiposLocales.push(JSON.parse(localStorage.getItem(clave)));
     }
+  }
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    navigate(-1);
   }
 
   return (
