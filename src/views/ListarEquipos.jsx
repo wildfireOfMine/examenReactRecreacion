@@ -26,7 +26,6 @@ const ListarEquipos = () => {
     if (clave.includes("Equipo")) {
       equiposLocales.push(JSON.parse(localStorage.getItem(clave)));
     }
-
   }
 
   return (
