@@ -2,8 +2,11 @@
 
 USUARIOS:
 -Hay tres tipos de usuarios: general, User, Admin
+
 -El usuario general tiene acceso a revisar las páginas de listar equipos, registrarse e iniciar sesión
+
 -El User tiene acceso a todas las anteriores, además de buscar equipo
+
 -El Admin tiene acceso a todas
 
 PÁGINAS: Dar de alta, listar equipos, buscar equipos, enfrentamientos, logearse, registrarse
