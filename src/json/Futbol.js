@@ -1,32 +1,37 @@
 export const futbol = [
     {
-        "nombre": "FC Barcelona",
-        "año_fundación": 1899,
-        "ciudad": "Barcelona",
-        "estadio": "Camp Nou"
+        nombre: "FC Barcelona",
+        ciudad: "Barcelona",
+        estadio: "Camp Nou",
+        fundado: 1899,
+        entrenador: "Xavi Hernández"
     },
     {
-        "nombre": "Real Madrid",
-        "año_fundación": 1902,
-        "ciudad": "Madrid",
-        "estadio": "Santiago Bernabéu"
+        nombre: "Real Madrid",
+        ciudad: "Madrid",
+        estadio: "Santiago Bernabéu",
+        fundado: 1902,
+        entrenador: "Carlo Ancelotti"
     },
     {
-        "nombre": "Atlético de Madrid",
-        "año_fundación": 1903,
-        "ciudad": "Madrid",
-        "estadio": "Wanda Metropolitano"
+        nombre: "Atlético de Madrid",
+        ciudad: "Madrid",
+        estadio: "Wanda Metropolitano",
+        fundado: 1903,
+        entrenador: "Diego Simeone"
     },
     {
-        "nombre": "Sevilla FC",
-        "año_fundación": 1890,
-        "ciudad": "Sevilla",
-        "estadio": "Ramón Sánchez-Pizjuán"
+        nombre: "Sevilla FC",
+        ciudad: "Sevilla",
+        estadio: "Ramón Sánchez-Pizjuán",
+        fundado: 1890,
+        entrenador: "Quique Sánchez Flores"
     },
     {
-        "nombre": "Valencia CF",
-        "año_fundación": 1919,
-        "ciudad": "Valencia",
-        "estadio": "Mestalla"
+        nombre: "Valencia CF",
+        ciudad: "Valencia",
+        estadio: "Mestalla",
+        fundado: 1919,
+        entrenador: "Rubén Baraja"
     }
 ];
