@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from '../hooks/useForm'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 const DarAlta = () => {
+  const navigate = useNavigate();
 
   const {nombre, ciudad, estadio, fundado, entrenador, 
     nombreEditar, ciudadEditar, estadioEditar, fundadoEditar, entrenadorEditar,
@@ -36,6 +37,7 @@ const DarAlta = () => {
       }
     }
     localStorage.setItem(`Equipo ${idEquipo}`, JSON.stringify(nuevoEquipo));
+    navigate('/');
   }
 
   const handleFormEdit = (e) => {
@@ -60,6 +62,7 @@ const DarAlta = () => {
       }
       i++;
     }
+    navigate('/');
   }
 
   const handleDelete = (e) => {
@@ -74,7 +77,8 @@ const DarAlta = () => {
       }
       i++;
     }
-  }
+    navigate('/');
+    }
   
   return (
     <>

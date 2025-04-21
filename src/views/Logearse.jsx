@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext';
 import { useForm } from '../hooks/useForm';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Logearse = () => {
+    const navigate = useNavigate();
     const {user,setUser} = useContext(UserContext);
     
     const {nombre, contrasena, tipo, onInputChange}=useForm({
@@ -25,6 +27,7 @@ const Logearse = () => {
             }
             i++;
         }
+        navigate('/');
     }
   return (
     <>
