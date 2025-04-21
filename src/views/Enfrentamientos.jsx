@@ -23,11 +23,22 @@ const Enfrentamientos = () => {
               j++;
               return breakLine;
             } else {
-              const equipo2 = <li key={index}>{equipo.nombre}
-              <p>vs</p>
-              </li>
-              j++;
-              return equipo2;
+              if (index % 2 == 1) {
+                const breakLine = (
+                  <li key={index}>{equipo.nombre}
+                  <br key={index}/>
+                  </li>
+                )
+                j++;
+                return breakLine;
+              } else {
+                const equipo2 = <li key={index}>{equipo.nombre}
+                <p>vs</p>
+                </li>
+                j++;
+                return equipo2;
+              }
+              
             }
             /* if (j % 2 == 0) {
               const equipo2 = <li key={index}>{equipo.nombre}
