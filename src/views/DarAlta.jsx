@@ -51,10 +51,12 @@ const DarAlta = () => {
     let encontrado = false;
     while (!encontrado && i<localStorage.length) {
       const equipoActual = localStorage.key(i);
-      if (JSON.parse(localStorage.getItem(localStorage.key(i))).nombre == nuevoEquipo.nombre) {
-        localStorage.removeItem(equipoActual);
-        localStorage.setItem(equipoActual, JSON.stringify(nuevoEquipo));
-        encontrado = true;
+      if (equipoActual.includes("Equipo")) {
+        if (JSON.parse(localStorage.getItem(localStorage.key(i))).nombre == nuevoEquipo.nombre) {
+          localStorage.removeItem(equipoActual);
+          localStorage.setItem(equipoActual, JSON.stringify(nuevoEquipo));
+          encontrado = true;
+        }
       }
       i++;
     }
