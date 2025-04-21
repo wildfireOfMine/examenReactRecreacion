@@ -6,8 +6,6 @@ import { useLocation } from 'react-router-dom';
 const Registrarse = () => {
     const data=useLocation();
 
-    console.log(data);
-
     const {nombre, contrasena, tipo, onInputChange}=useForm({
         nombre:'',
         contrasena:'',

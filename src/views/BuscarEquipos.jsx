@@ -7,10 +7,7 @@ const BuscarEquipos = () => {
   const navigate = useNavigate();
   const location=useLocation();
 
-  console.log({location});
-
   const {q=''}=queryString.parse(location.search);
-  console.log(q);
 
   const {buscarTexto,onInputChange}=useForm({
           buscarTexto:''
@@ -36,8 +33,6 @@ const BuscarEquipos = () => {
       equiposLocales.push(JSON.parse(localStorage.getItem(clave)));
     }
   }
-  console.log(equiposLocales);
-  console.log(q);
   return (
     <>
         <h1>Buscar equipos</h1>
