@@ -10,10 +10,13 @@ const ListarEquipos = () => {
   const data=useLocation();
 
   useEffect(() => {
-    for (let i=0; i<equipos.length; i++) {
-      localStorage.key(i);
-      localStorage.setItem(`Equipo ${i}`, JSON.stringify(equipos[i]));
+    if (!sessionStorage.getItem("equiposCargados")) {
+      for (let i=0; i<equipos.length; i++) {
+        localStorage.key(i);
+        localStorage.setItem(`Equipo ${i}`, JSON.stringify(equipos[i]));
+      }
     }
+    sessionStorage.setItem("equiposCargados", "true");
   }, [])
 
   const equiposLocales = []
