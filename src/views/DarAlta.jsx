@@ -1,8 +1,52 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useForm } from '../hooks/useForm'
+import { reducer } from "../reducer"
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 const DarAlta = () => {
+  const initialState={
+    nombre:'',
+    ciudad:'',
+    estadio:'',
+    fundado:'',
+    entrenador:'',
+  }
+  const [state,dispatch]=useReducer(reducer,initialState)
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    dispatch({
+      type:'dar',
+      nombre: nombre,
+      ciudad:ciudad,
+      estadio:estadio,
+      fundado:fundado,
+      entrenador:entrenador
+    })
+    navigate('/');
+  }
+
+  const handleFormEdit = (e) => {
+    e.preventDefault();
+    dispatch({
+      type:'modificar',
+      nombre: nombreEditar,
+      ciudad:ciudadEditar,
+      estadio:estadioEditar,
+      fundado:fundadoEditar,
+      entrenador:entrenadorEditar
+    })
+    navigate('/');
+  }
+
+ const handleDelete = (e) => {
+  e.preventDefault();
+  dispatch({
+      type:'borrar',
+      nombre: nombreBorrar,
+    })
+    navigate('/');
+  }
   const navigate = useNavigate();
 
   const {nombre, ciudad, estadio, fundado, entrenador, 
@@ -21,7 +65,7 @@ const DarAlta = () => {
     nombreBorrar:'',
   })
 
-  const handleFormSubmit = (e) => {
+/*   const handleFormSubmit = (e) => {
     e.preventDefault();
     const nuevoEquipo = {
       nombre:nombre,
@@ -38,9 +82,9 @@ const DarAlta = () => {
     }
     localStorage.setItem(`Equipo ${idEquipo}`, JSON.stringify(nuevoEquipo));
     navigate('/');
-  }
+  } */
 
-  const handleFormEdit = (e) => {
+/*   const handleFormEdit = (e) => {
     e.preventDefault();
     const nuevoEquipo = {
       nombre:nombreEditar,
@@ -63,9 +107,9 @@ const DarAlta = () => {
       i++;
     }
     navigate('/');
-  }
+  } */
 
-  const handleDelete = (e) => {
+/*   const handleDelete = (e) => {
     e.preventDefault();
     let i = 0;
     while (i<localStorage.length) {
@@ -78,7 +122,7 @@ const DarAlta = () => {
       i++;
     }
     navigate('/');
-    }
+    } */
   
   return (
     <>

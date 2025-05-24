@@ -1,0 +1,11 @@
+SRC-
+    -COMPONENTS: Todos los componentes relacionados con 
+    el proyecto.
+    -CONTEXT: Relacionado con el Hook de UseContext.
+    -HOOKS: Relacionado con los Custom Hooks (es decir, 
+    creados por uno mismo).
+    -JSON: Autoreferencial. Archivos tipo JSON.
+    -ROUTES: Relacionado con el Hook de React Router DOM.
+    -VIEWS: Las vistas/páginas del proyecto.
+    -ANYTHING ELSE: App.jsx, main.jsx son obligatorios de React
+    app.css, index.css son archivos CSS
