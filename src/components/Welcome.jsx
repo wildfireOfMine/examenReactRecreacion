@@ -2,12 +2,19 @@ import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext';
 
 const Welcome = () => {
-    const {user} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
+
+    const handleLogout = () => {
+      setUser();
+    }
     /* {user ? <Home emailUser={user}/> : <Login/> } */    
   return (
-    <h1>
-        { user && `Bienvenido, ${user.nombre}`}
-    </h1>
+    <>
+        { user &&
+        <> 
+        <h1>Bienvenido, {user.nombre}</h1> <button onClick={handleLogout}>Logout</button> <br/>
+        </> }
+    </>
   )
 }
 
